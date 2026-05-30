@@ -1,30 +1,16 @@
-# Intelligent Retail Demand & Supply Chain Optimizer
+# React + Vite
 
-This project provides a robust machine learning pipeline for predicting retail demand 14-30 days into the future. It addresses real-world supply chain challenges by translating predictive accuracy into actionable business value (Dollars Saved) and solving the "Cold Start" problem for brand new items.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- **Synthetic Data Generation**: Automatically generates a realistic retail dataset (seasonality, promotions, holidays) if no dataset is provided.
-- **Advanced Feature Engineering**: Time-based features, rolling windows, and lagged variables designed to prevent data leakage over the forecast horizon.
-- **Metadata Clustering (Cold Start)**: Uses K-Means clustering on item metadata (category, department, price) to impute demand for brand new items with zero sales history.
-- **Hyperparameter Optimization**: Integrates `optuna` to automatically find the best model parameters.
-- **Business-First Evaluation**: Calculates the financial cost of overstocking and understocking, outputting the net "Dollars Saved" against a baseline model.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Setup
+## React Compiler
 
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-2. Run the pipeline:
-   ```bash
-   python main.py
-   ```
+## Expanding the ESLint configuration
 
-## Architecture
-
-- `src/data/`: Data loading and synthetic generation.
-- `src/features/`: Feature engineering and data splitting.
-- `src/models/`: Wrappers for LightGBM/XGBoost/Prophet, Clustering logic, and Optuna tuning.
-- `src/evaluation/`: Custom financial metrics calculation.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
